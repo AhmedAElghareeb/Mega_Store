@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:mega_store/core/logic/helper_methods.dart';
+import 'package:mega_store/views/base/home/home_nav.dart';
 import '../../../core/design/app_button.dart';
 import '../../../core/design/app_input.dart';
 
@@ -40,7 +42,12 @@ class LoginForm extends StatelessWidget {
           height: 16.h,
         ),
         AppButton(
-          onPress: () {},
+          onPress: () {
+            navigateTo(
+              const HomeNav(),
+              removeHistory: true
+            );
+          },
           text: "Sign In",
         ),
       ],

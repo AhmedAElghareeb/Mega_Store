@@ -11,14 +11,15 @@ class AppInput extends StatefulWidget {
     this.prefixIcon,
     this.keyboardType = TextInputType.text,
     this.labelText,
-    this.validator, this.hidePass = false,
+    this.validator,
+    this.hidePass = false, this.isFilled = false,
   });
 
   final TextEditingController? controller;
   final String? labelText, prefixIcon;
   final TextInputType keyboardType;
   final FormFieldValidator<String?>? validator;
-  final bool hidePass;
+  final bool hidePass, isFilled;
 
   @override
   State<AppInput> createState() => _AppInputState();
@@ -40,6 +41,7 @@ class _AppInputState extends State<AppInput> {
           ),
         ),
         labelText: widget.labelText,
+        filled: widget.isFilled,
         labelStyle: Styles.textStyle12W400,
         prefixIcon: Padding(
           padding: EdgeInsetsDirectional.all(

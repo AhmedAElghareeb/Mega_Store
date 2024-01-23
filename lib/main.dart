@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:mega_store/views/base/splash.dart';
+import 'package:mega_store/views/base/splash/splash.dart';
 
 import 'core/logic/helper_methods.dart';
 
@@ -31,7 +31,8 @@ class MegaStore extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           appBarTheme: const AppBarTheme(
-            centerTitle: true,
+            centerTitle: false,
+            backgroundColor: Colors.transparent,
             elevation: 0,
           ),
           fontFamily: "Poppins",

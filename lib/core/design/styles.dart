@@ -27,4 +27,13 @@ class Styles {
     height: 0.13,
     letterSpacing: 0.50,
   );
+
+  static const textStyles10W700 = TextStyle(
+    color: Color(0xFF50555C),
+    fontSize: 10,
+    fontFamily: 'Poppins',
+    fontWeight: FontWeight.w700,
+    height: 0.15,
+    letterSpacing: 0.50,
+  );
 }
