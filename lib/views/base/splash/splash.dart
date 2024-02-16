@@ -21,6 +21,7 @@ class _SplashViewState extends State<SplashView> {
       () async {
         navigateTo(
           const LoginView(),
+          removeHistory: true,
         );
       },
     );

@@ -10,47 +10,53 @@ class LoginForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        AppInput(
-          keyboardType: TextInputType.emailAddress,
-          validator: (value) {
-            if (value!.isEmpty) {
-              return "This Field is Required!!!";
-            }
-            return null;
-          },
-          labelText: "Your Email",
-          prefixIcon: "message.svg",
-        ),
-        SizedBox(
-          height: 10.h,
-        ),
-        AppInput(
-          keyboardType: TextInputType.visiblePassword,
-          validator: (value) {
-            if (value!.isEmpty) {
-              return "This Field is Required!!!";
-            }
-            return null;
-          },
-          hidePass: true,
-          labelText: "Password",
-          prefixIcon: "pass.svg",
-        ),
-        SizedBox(
-          height: 16.h,
-        ),
-        AppButton(
-          onPress: () {
-            navigateTo(
-              const HomeNav(),
-              removeHistory: true
-            );
-          },
-          text: "Sign In",
-        ),
-      ],
+    final formKey = GlobalKey<FormState>();
+
+    return Form(
+      key: formKey,
+      child: Column(
+        children: [
+          AppInput(
+            keyboardType: TextInputType.emailAddress,
+            validator: (value) {
+              if (value!.isEmpty) {
+                return "This Field is Required!!!";
+              }
+              return null;
+            },
+            labelText: "Your Email",
+            prefixIcon: "message.svg",
+          ),
+          SizedBox(
+            height: 10.h,
+          ),
+          AppInput(
+            keyboardType: TextInputType.visiblePassword,
+            validator: (value) {
+              if (value!.isEmpty) {
+                return "This Field is Required!!!";
+              }
+              return null;
+            },
+            hidePass: true,
+            labelText: "Password",
+            prefixIcon: "pass.svg",
+          ),
+          SizedBox(
+            height: 16.h,
+          ),
+          AppButton(
+            onPress: () {
+              if (formKey.currentState!.validate()) {
+                navigateTo(
+                  const HomeNav(),
+                );
+              }
+            },
+            text: "Sign In",
+          ),
+        ],
+      ),
     );
   }
 }

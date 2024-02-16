@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -25,9 +26,11 @@ class CategoryItem extends StatelessWidget {
                     50.r,
                   ),
                 ),
-                child: Image.network(
-                  "https://avatars.mds.yandex.net/get-images-cbir/2255891/hieXrW_5GQPCuxjpa5xNVg1429/ocr",
+                child: CachedNetworkImage(
+                  imageUrl: "https://avatars.mds.yandex.net/get-images-cbir/2255891/hieXrW_5GQPCuxjpa5xNVg1429/ocr",
                   fit: BoxFit.fill,
+                  placeholder: (context, url) => const CircularProgressIndicator(),
+                  errorWidget: (context, url, error) => const Icon(Icons.error),
                 ),
               ),
               const Text(

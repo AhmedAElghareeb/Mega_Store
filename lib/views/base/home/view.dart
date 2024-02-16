@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -109,8 +110,10 @@ class HomeView extends StatelessWidget {
             SizedBox(
               height: 20.h,
             ),
-            Image.network(
-              "https://avatars.mds.yandex.net/get-images-cbir/4330867/nDQIS7nTFpWzWLMkve23cA2920/ocr",
+            CachedNetworkImage(
+              imageUrl: "https://avatars.mds.yandex.net/get-images-cbir/2255891/hieXrW_5GQPCuxjpa5xNVg1429/ocr",
+              placeholder: (context, url) => const Center(child: CircularProgressIndicator()),
+              errorWidget: (context, url, error) => const Icon(Icons.error),
             ),
             SizedBox(
               height: 23.h,
