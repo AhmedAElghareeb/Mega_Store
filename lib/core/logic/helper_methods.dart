@@ -8,12 +8,7 @@ Future navigateTo(Widget page, {bool removeHistory = false}) {
     MaterialPageRoute(
       builder: (context) => page,
     ),
-    (route) => removeHistory,
+    (route) => true,
   );
 }
 
-navigateBack() {
-  return Navigator.pop(
-    navigatorKey.currentContext!,
-  );
-}

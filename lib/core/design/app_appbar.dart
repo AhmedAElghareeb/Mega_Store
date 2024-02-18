@@ -9,14 +9,14 @@ AppBar buildAppBar({final String? title}) {
       title ?? "",
       style: Styles.textStyle16W700,
     ),
-    leading: IconButton(
-      onPressed: ()
-      {
-        // navigateBack();
-      },
-      icon: SvgPicture.asset(
-        "assets/icons/arrow_left.svg",
-      ),
-    ),
+    // leading: IconButton(
+    //   onPressed: ()
+    //   {
+    //     // navigateBack();
+    //   },
+    //   icon: SvgPicture.asset(
+    //     "assets/icons/arrow_left.svg",
+    //   ),
+    // ),
   );
 }
