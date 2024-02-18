@@ -12,12 +12,18 @@ class RegisterForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final formKey = GlobalKey<FormState>();
+    final emailController = TextEditingController();
+    final passwordController = TextEditingController();
+    final confirmPasswordController = TextEditingController();
+    final nameController = TextEditingController();
+    final phoneController = TextEditingController();
     return Form(
       key: formKey,
       child: Column(
         children: [
           AppInput(
             keyboardType: TextInputType.name,
+            controller: nameController,
             validator: (value) {
               if (value!.isEmpty) {
                 return "This Field is Required!!!";
@@ -32,6 +38,7 @@ class RegisterForm extends StatelessWidget {
           ),
           AppInput(
             keyboardType: TextInputType.emailAddress,
+            controller: emailController,
             validator: (value) {
               if (value!.isEmpty) {
                 return "This Field is Required!!!";
@@ -46,6 +53,7 @@ class RegisterForm extends StatelessWidget {
           ),
           AppInput(
             keyboardType: TextInputType.phone,
+            controller: phoneController,
             validator: (value) {
               if (value!.isEmpty) {
                 return "This Field is Required!!!";
@@ -60,6 +68,7 @@ class RegisterForm extends StatelessWidget {
           ),
           AppInput(
             keyboardType: TextInputType.visiblePassword,
+            controller: passwordController,
             validator: (value) {
               if (value!.isEmpty) {
                 return "This Field is Required!!!";
@@ -74,9 +83,12 @@ class RegisterForm extends StatelessWidget {
           ),
           AppInput(
             keyboardType: TextInputType.visiblePassword,
+            controller: confirmPasswordController,
             validator: (value) {
               if (value!.isEmpty) {
                 return "This Field is Required!!!";
+              } else if (value.toString() != passwordController.text) {
+                return "Password doesn't Match";
               }
               return null;
             },
@@ -87,9 +99,8 @@ class RegisterForm extends StatelessWidget {
             height: 28.h,
           ),
           AppButton(
-            onPress: ()
-            {
-              if(formKey.currentState!.validate()) {
+            onPress: () {
+              if (formKey.currentState!.validate()) {
                 navigateTo(
                   const LoginView(),
                 );

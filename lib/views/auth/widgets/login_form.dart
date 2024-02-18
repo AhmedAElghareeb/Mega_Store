@@ -11,6 +11,8 @@ class LoginForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final formKey = GlobalKey<FormState>();
+    final emailController = TextEditingController();
+    final passwordController = TextEditingController();
 
     return Form(
       key: formKey,
@@ -18,9 +20,10 @@ class LoginForm extends StatelessWidget {
         children: [
           AppInput(
             keyboardType: TextInputType.emailAddress,
+            controller: emailController,
             validator: (value) {
               if (value!.isEmpty) {
-                return "This Field is Required!!!";
+                return "Oops! Your Email Is Not Correct";
               }
               return null;
             },
@@ -32,9 +35,10 @@ class LoginForm extends StatelessWidget {
           ),
           AppInput(
             keyboardType: TextInputType.visiblePassword,
+            controller: passwordController,
             validator: (value) {
               if (value!.isEmpty) {
-                return "This Field is Required!!!";
+                return "Oops! Your Password Is Not Correct";
               }
               return null;
             },

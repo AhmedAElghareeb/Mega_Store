@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:mega_store/core/logic/helper_methods.dart';
+import 'package:mega_store/views/auth/login.dart';
 
 import '../../core/design/app_button.dart';
 import '../../core/design/app_input.dart';
@@ -10,6 +12,11 @@ class NewPasswordView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final formKey = GlobalKey<FormState>();
+
+    final passwordController = TextEditingController();
+    final confirmPasswordController = TextEditingController();
+
     return Scaffold(
       body: SafeArea(
         child: ListView(
@@ -32,36 +39,53 @@ class NewPasswordView extends StatelessWidget {
             SizedBox(
               height: 50.h,
             ),
-            AppInput(
-              keyboardType: TextInputType.visiblePassword,
-              validator: (value) {
-                if (value!.isEmpty) {
-                  return "This Field is Required!!!";
-                }
-                return null;
-              },
-              labelText: "Password",
-              prefixIcon: "pass.svg",
-            ),
-            SizedBox(
-              height: 8.h,
-            ),
-            AppInput(
-              keyboardType: TextInputType.visiblePassword,
-              validator: (value) {
-                if (value!.isEmpty) {
-                  return "This Field is Required!!!";
-                }
-                return null;
-              },
-              labelText: "Confirm Password",
-              prefixIcon: "pass.svg",
+            Form(
+              key: formKey,
+              child: Column(
+                children: [
+                  AppInput(
+                    keyboardType: TextInputType.visiblePassword,
+                    controller: passwordController,
+                    validator: (value) {
+                      if (value!.isEmpty) {
+                        return "This Field is Required!!!";
+                      }
+                      return null;
+                    },
+                    labelText: "Password",
+                    prefixIcon: "pass.svg",
+                  ),
+                  SizedBox(
+                    height: 8.h,
+                  ),
+                  AppInput(
+                    keyboardType: TextInputType.visiblePassword,
+                    controller: confirmPasswordController,
+                    validator: (value) {
+                      if (value!.isEmpty) {
+                        return "This Field is Required!!!";
+                      } else if (value.toString() != passwordController.text) {
+                        return "Password doesn't Match";
+                      }
+                      return null;
+                    },
+                    labelText: "Confirm Password",
+                    prefixIcon: "pass.svg",
+                  ),
+                ],
+              ),
             ),
             SizedBox(
               height: 28.h,
             ),
             AppButton(
-              onPress: () {},
+              onPress: () {
+                if (formKey.currentState!.validate()) {
+                  navigateTo(
+                    const LoginView(),
+                  );
+                }
+              },
               text: "Confirm",
             ),
           ],

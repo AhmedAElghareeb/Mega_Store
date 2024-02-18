@@ -12,6 +12,10 @@ class ForgetPasswordView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final formKey = GlobalKey<FormState>();
+
+    final emailController = TextEditingController();
+
     return Scaffold(
       body: SafeArea(
         child: ListView(
@@ -42,26 +46,31 @@ class ForgetPasswordView extends StatelessWidget {
             SizedBox(
               height: 69.h,
             ),
-            AppInput(
-              keyboardType: TextInputType.emailAddress,
-              validator: (value) {
-                if (value!.isEmpty) {
-                  return "This Field is Required!!!";
-                }
-                return null;
-              },
-              labelText: "Your Email",
-              prefixIcon: "message.svg",
+            Form(
+              key: formKey,
+              child: AppInput(
+                keyboardType: TextInputType.emailAddress,
+                controller: emailController,
+                validator: (value) {
+                  if (value!.isEmpty) {
+                    return "This Field is Required!!!";
+                  }
+                  return null;
+                },
+                labelText: "Your Email",
+                prefixIcon: "message.svg",
+              ),
             ),
             SizedBox(
               height: 31.h,
             ),
             AppButton(
-              onPress: ()
-              {
-                navigateTo(
-                  const VerificationView(),
-                );
+              onPress: () {
+                if (formKey.currentState!.validate()) {
+                  navigateTo(
+                    const VerificationView(),
+                  );
+                }
               },
               text: "Send",
             ),
