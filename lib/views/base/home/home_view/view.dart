@@ -5,11 +5,12 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mega_store/core/design/app_input.dart';
 import 'package:mega_store/core/design/styles.dart';
 import 'package:mega_store/core/logic/helper_methods.dart';
-import 'package:mega_store/views/base/home/home_widgets/category_item.dart';
-import 'package:mega_store/views/base/home/home_widgets/flash_sale_item.dart';
-import 'package:mega_store/views/base/home/home_widgets/slider_item.dart';
-import 'package:mega_store/views/base/home/home_widgets/you_may_like_item.dart';
-import 'package:mega_store/views/base/home/search/view.dart';
+import 'package:mega_store/views/base/home/home_view/cart/view.dart';
+import 'package:mega_store/views/base/home/home_view/home_widgets/category_item.dart';
+import 'package:mega_store/views/base/home/home_view/home_widgets/flash_sale_item.dart';
+import 'package:mega_store/views/base/home/home_view/home_widgets/slider_item.dart';
+import 'package:mega_store/views/base/home/home_view/home_widgets/you_may_like_item.dart';
+import 'package:mega_store/views/base/home/home_view/search/view.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -67,7 +68,11 @@ class HomeView extends StatelessWidget {
             children: [
               Center(
                 child: IconButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    navigateTo(
+                      const CartView(),
+                    );
+                  },
                   highlightColor: Colors.white,
                   splashColor: Colors.white,
                   icon: SvgPicture.asset(

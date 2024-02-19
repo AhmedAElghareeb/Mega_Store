@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mega_store/core/design/app_button.dart';
 import 'package:mega_store/core/design/styles.dart';
 import 'package:mega_store/core/logic/helper_methods.dart';
-import 'package:mega_store/views/base/home/home_view/view.dart';
+import 'package:mega_store/views/base/home/home_nav.dart';
 
 class SearchView extends StatelessWidget {
   const SearchView({super.key});
@@ -55,7 +55,7 @@ class SearchView extends StatelessWidget {
             child: AppButton(
               onPress: () {
                 navigateTo(
-                  const HomeView(),
+                  const HomeNav(),
                 );
               },
               text: "Back to Home",
