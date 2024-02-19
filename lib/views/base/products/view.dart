@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:mega_store/views/base/favorites/widgets/item.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:mega_store/views/base/products/widgets/one_category_item.dart';
+
 import '../../../core/design/styles.dart';
 
-class FavoritesView extends StatelessWidget {
-  const FavoritesView({super.key});
+class ProductsView extends StatelessWidget {
+  const ProductsView({super.key});
 
   @override
   Widget build(BuildContext context) {
+
     List<String> title = [
       "FS - Nike Air Max 270 React",
       "FS - Nike Air Max 270 React",
@@ -35,33 +37,31 @@ class FavoritesView extends StatelessWidget {
     ];
 
     return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          "Category Name",
+          style: Styles.textStyle16W700,
+        ),
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: SvgPicture.asset(
+            "assets/icons/arrow_left.svg",
+          ),
+        ),
+      ),
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Padding(
-              padding: EdgeInsetsDirectional.only(
-                start: 26.w,
-                top: 30.h,
-                bottom: 28.h,
-              ),
-              child: const Text(
-                "Favorites List",
-                style: Styles.textStyle16W700,
-              ),
-            ),
-            const Divider(),
-            SizedBox(
-              height: 17.h,
-            ),
             Expanded(
               child: GridView.builder(
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
-                  childAspectRatio: 0.67,
-                  crossAxisSpacing: 5.w,
+                  childAspectRatio: 0.70,
                 ),
-                itemBuilder: (context, index) => FavoritesItem(
+                itemBuilder: (context, index) => Item(
                   images: images,
                   title: title,
                   priceAfterDiscount: priceAfterDiscount,

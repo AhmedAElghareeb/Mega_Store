@@ -3,10 +3,16 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mega_store/core/design/styles.dart';
 
 class AppButton extends StatelessWidget {
-  const AppButton({super.key, required this.text, this.onPress});
+  const AppButton({
+    super.key,
+    required this.text,
+    this.onPress,
+    this.bgColor = const Color(0xFFED1C24),
+  });
 
   final String text;
   final VoidCallback? onPress;
+  final Color bgColor;
 
   @override
   Widget build(BuildContext context) {
@@ -17,14 +23,14 @@ class AppButton extends StatelessWidget {
         height: 57.h,
         clipBehavior: Clip.antiAlias,
         decoration: ShapeDecoration(
-          color: const Color(0xFFED1C24),
+          color: bgColor,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(
               5.r,
             ),
           ),
           shadows: const [
-             BoxShadow(
+            BoxShadow(
               color: Color(0x3D40BFFF),
               blurRadius: 30,
               offset: Offset(0, 10),

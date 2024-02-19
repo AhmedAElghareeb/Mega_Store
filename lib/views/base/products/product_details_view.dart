@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:mega_store/core/design/app_button.dart';
 import 'package:mega_store/views/base/products/widgets/details.dart';
 import 'package:mega_store/views/base/products/widgets/product_images.dart';
 import 'package:mega_store/views/base/products/widgets/product_name_stars_price.dart';
@@ -58,43 +59,53 @@ class ProductDetailsView extends StatelessWidget {
           ),
         ),
       ),
-      body: ListView(
-        padding: EdgeInsetsDirectional.symmetric(horizontal: 13.w),
-        children: [
-          const ProductImages(),
-          SizedBox(
-            height: 3.h,
-          ),
-          const ProductNameStarsPrice(),
-          SizedBox(
-            height: 22.h,
-          ),
-          const Details(),
-          SizedBox(
-            height: 15.h,
-          ),
-          const ReviewProduct(),
-          SizedBox(
-            height: 15.h,
-          ),
-          Text(
-            "You Might Also Like",
-            style: Styles.textStyle14W700.copyWith(
-              color: const Color(0xff223263),
-              height: 2.1,
+      body: SafeArea(
+        child: ListView(
+          padding: EdgeInsetsDirectional.symmetric(horizontal: 13.w),
+          children: [
+            const ProductImages(),
+            SizedBox(
+              height: 3.h,
             ),
-          ),
-          SizedBox(
-            height: 17.h,
-          ),
-          YouMightLike(
-            images: images,
-            title: title,
-            priceAfterSale: priceAfterSale,
-            price: price,
-            sale: sale,
-          ),
-        ],
+            const ProductNameStarsPrice(),
+            SizedBox(
+              height: 22.h,
+            ),
+            const Details(),
+            SizedBox(
+              height: 15.h,
+            ),
+            const ReviewProduct(),
+            SizedBox(
+              height: 15.h,
+            ),
+            Text(
+              "You Might Also Like",
+              style: Styles.textStyle14W700.copyWith(
+                color: const Color(0xff223263),
+                height: 2.1,
+              ),
+            ),
+            SizedBox(
+              height: 17.h,
+            ),
+            YouMightLike(
+              images: images,
+              title: title,
+              priceAfterSale: priceAfterSale,
+              price: price,
+              sale: sale,
+            ),
+            SizedBox(
+              height: 50.h,
+            ),
+            AppButton(
+              onPress: (){},
+              text: "Add To Cart",
+              bgColor: const Color(0xffBA6400),
+            ),
+          ],
+        ),
       ),
     );
   }

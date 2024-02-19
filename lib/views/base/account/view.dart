@@ -33,7 +33,7 @@ class AccountView extends StatelessWidget {
             Padding(
               padding: EdgeInsetsDirectional.only(
                 start: 26.w,
-                top: 70.h,
+                top: 30.h,
                 bottom: 28.h,
               ),
               child: const Text(
