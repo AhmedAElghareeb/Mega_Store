@@ -11,8 +11,12 @@ class LoginForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final formKey = GlobalKey<FormState>();
-    final emailController = TextEditingController();
-    final passwordController = TextEditingController();
+    final emailController = TextEditingController(
+      text: "rex4dom@gmail.com"
+    );
+    final passwordController = TextEditingController(
+      text: "12345",
+    );
 
     return Form(
       key: formKey,

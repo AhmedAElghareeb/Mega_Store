@@ -4,10 +4,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mega_store/core/design/app_input.dart';
 import 'package:mega_store/core/design/styles.dart';
+import 'package:mega_store/core/logic/helper_methods.dart';
 import 'package:mega_store/views/base/home/home_widgets/category_item.dart';
 import 'package:mega_store/views/base/home/home_widgets/flash_sale_item.dart';
 import 'package:mega_store/views/base/home/home_widgets/slider_item.dart';
 import 'package:mega_store/views/base/home/home_widgets/you_may_like_item.dart';
+import 'package:mega_store/views/base/home/search_view.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -48,10 +50,16 @@ class HomeView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 87.h,
-        title: const AppInput(
+        title: AppInput(
           labelText: "Search Product",
           prefixIcon: "search.svg",
           isFilled: true,
+          isEnabled: false,
+          onTap: () {
+            navigateTo(
+              const SearchView(),
+            );
+          },
         ),
         automaticallyImplyLeading: false,
         actions: [
@@ -111,8 +119,10 @@ class HomeView extends StatelessWidget {
               height: 20.h,
             ),
             CachedNetworkImage(
-              imageUrl: "https://avatars.mds.yandex.net/i?id=3128795db888383ce5b3eabefceb3a02a02d18c0-10414799-images-thumbs&n=13",
-              placeholder: (context, url) => const Center(child: CircularProgressIndicator()),
+              imageUrl:
+                  "https://avatars.mds.yandex.net/i?id=3128795db888383ce5b3eabefceb3a02a02d18c0-10414799-images-thumbs&n=13",
+              placeholder: (context, url) =>
+                  const Center(child: CircularProgressIndicator()),
               errorWidget: (context, url, error) => const Icon(Icons.error),
             ),
             SizedBox(

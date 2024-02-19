@@ -32,4 +32,12 @@ class Styles {
     height: 0.15,
     letterSpacing: 0.50,
   );
+
+  static const textStyle20W600 = TextStyle(
+    color: Color(0xFF000000),
+    fontSize: 20,
+    fontWeight: FontWeight.w600,
+    height: 2.5,
+    letterSpacing: 0.50,
+  );
 }
