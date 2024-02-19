@@ -2,6 +2,8 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mega_store/core/design/styles.dart';
+import 'package:mega_store/core/logic/helper_methods.dart';
+import 'package:mega_store/views/base/home/products/reviews.dart';
 
 class ReviewProduct extends StatelessWidget {
   const ReviewProduct({super.key});
@@ -22,7 +24,11 @@ class ReviewProduct extends StatelessWidget {
               ),
             ),
             TextButton(
-              onPressed: () {},
+              onPressed: () {
+                navigateTo(
+                  const ReviewsView(),
+                );
+              },
               child: Text(
                 "See More",
                 style: Styles.textStyle12W400.copyWith(

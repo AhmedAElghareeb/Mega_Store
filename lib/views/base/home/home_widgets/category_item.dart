@@ -36,7 +36,7 @@ class CategoryItem extends StatelessWidget {
                   ),
                   child: CachedNetworkImage(
                     imageUrl:
-                        "https://avatars.mds.yandex.net/get-images-cbir/2255891/hieXrW_5GQPCuxjpa5xNVg1429/ocr",
+                        "https://helios-i.mashable.com/imagery/articles/01kf4YIfmq5NBkZ7x2zsQWx/hero-image.fill.size_1200x1200.v1665065228.jpg",
                     fit: BoxFit.fill,
                     placeholder: (context, url) =>
                         const CircularProgressIndicator(),

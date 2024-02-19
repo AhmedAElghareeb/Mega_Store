@@ -10,7 +10,7 @@ class SliderItem extends StatelessWidget {
     return Column(
       children: [
         CachedNetworkImage(
-          imageUrl: "https://avatars.mds.yandex.net/get-images-cbir/2255891/hieXrW_5GQPCuxjpa5xNVg1429/ocr",
+          imageUrl: "https://click-bt.ru/upload/iblock/8d3/8d3e3654b3998e673c241cb0d8378499.jpg",
           fit: BoxFit.cover,
           placeholder: (context, url) => const CircularProgressIndicator(),
           errorWidget: (context, url, error) => const Icon(Icons.error),

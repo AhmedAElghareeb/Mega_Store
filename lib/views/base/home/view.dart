@@ -111,7 +111,7 @@ class HomeView extends StatelessWidget {
               height: 20.h,
             ),
             CachedNetworkImage(
-              imageUrl: "https://avatars.mds.yandex.net/get-images-cbir/2255891/hieXrW_5GQPCuxjpa5xNVg1429/ocr",
+              imageUrl: "https://avatars.mds.yandex.net/i?id=3128795db888383ce5b3eabefceb3a02a02d18c0-10414799-images-thumbs&n=13",
               placeholder: (context, url) => const Center(child: CircularProgressIndicator()),
               errorWidget: (context, url, error) => const Icon(Icons.error),
             ),

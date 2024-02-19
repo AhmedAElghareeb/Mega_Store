@@ -12,7 +12,7 @@ class AppInput extends StatefulWidget {
     this.keyboardType = TextInputType.text,
     this.labelText,
     this.validator,
-    this.hidePass = false, this.isFilled = false,
+    this.hidePass = false, this.isFilled = false, this.maxLines = 1,
   });
 
   final TextEditingController? controller;
@@ -20,6 +20,7 @@ class AppInput extends StatefulWidget {
   final TextInputType keyboardType;
   final FormFieldValidator<String?>? validator;
   final bool hidePass, isFilled;
+  final int maxLines;
 
   @override
   State<AppInput> createState() => _AppInputState();
@@ -32,6 +33,7 @@ class _AppInputState extends State<AppInput> {
       validator: widget.validator,
       keyboardType: widget.keyboardType,
       controller: widget.controller,
+      maxLines: widget.maxLines,
       decoration: InputDecoration(
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(5.r),
@@ -43,7 +45,7 @@ class _AppInputState extends State<AppInput> {
         labelText: widget.labelText,
         filled: widget.isFilled,
         labelStyle: Styles.textStyle12W400,
-        prefixIcon: Padding(
+        prefixIcon: widget.prefixIcon != null ? Padding(
           padding: EdgeInsetsDirectional.all(
             12.r,
           ),
@@ -53,7 +55,7 @@ class _AppInputState extends State<AppInput> {
             height: 24.h,
             width: 24.w,
           ),
-        ),
+        ) : null,
       ),
       obscureText: widget.hidePass,
       onTapOutside: (event) {
