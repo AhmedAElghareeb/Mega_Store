@@ -2,7 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mega_store/core/logic/helper_methods.dart';
-import 'package:mega_store/views/base/products/view.dart';
+import 'package:mega_store/views/base/home/products/view.dart';
 
 class CategoryItem extends StatelessWidget {
   const CategoryItem({super.key});

@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:mega_store/core/design/app_button.dart';
-import 'package:mega_store/views/base/products/widgets/details.dart';
-import 'package:mega_store/views/base/products/widgets/product_images.dart';
-import 'package:mega_store/views/base/products/widgets/product_name_stars_price.dart';
-import 'package:mega_store/views/base/products/widgets/review_product.dart';
-import 'package:mega_store/views/base/products/widgets/you_may_like.dart';
-import '../../../core/design/styles.dart';
+import 'package:mega_store/core/design/styles.dart';
+import 'package:mega_store/views/base/home/products/products_widgets/details.dart';
+import 'package:mega_store/views/base/home/products/products_widgets/product_images.dart';
+import 'package:mega_store/views/base/home/products/products_widgets/product_name_stars_price.dart';
+import 'package:mega_store/views/base/home/products/products_widgets/review_product.dart';
+import 'package:mega_store/views/base/home/products/products_widgets/you_may_like.dart';
+
 
 class ProductDetailsView extends StatelessWidget {
   const ProductDetailsView({super.key});

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:mega_store/core/design/styles.dart';
 
-import '../../../../core/design/styles.dart';
+
+
 
 class Details extends StatelessWidget {
   const Details({super.key});

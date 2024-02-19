@@ -4,10 +4,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mega_store/core/design/app_input.dart';
 import 'package:mega_store/core/design/styles.dart';
-import 'package:mega_store/views/base/home/widgets/category_item.dart';
-import 'package:mega_store/views/base/home/widgets/flash_sale_item.dart';
-import 'package:mega_store/views/base/home/widgets/slider_item.dart';
-import 'package:mega_store/views/base/home/widgets/you_may_like_item.dart';
+import 'package:mega_store/views/base/home/home_widgets/category_item.dart';
+import 'package:mega_store/views/base/home/home_widgets/flash_sale_item.dart';
+import 'package:mega_store/views/base/home/home_widgets/slider_item.dart';
+import 'package:mega_store/views/base/home/home_widgets/you_may_like_item.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});

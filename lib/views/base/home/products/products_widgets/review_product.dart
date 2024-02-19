@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../core/design/styles.dart';
+import 'package:mega_store/core/design/styles.dart';
 
 class ReviewProduct extends StatelessWidget {
   const ReviewProduct({super.key});

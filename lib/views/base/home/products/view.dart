@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:mega_store/views/base/products/widgets/one_category_item.dart';
+import 'package:mega_store/views/base/home/products/products_widgets/one_category_item.dart';
 
-import '../../../core/design/styles.dart';
+import '../../../../core/design/styles.dart';
+
 
 class ProductsView extends StatelessWidget {
   const ProductsView({super.key});
