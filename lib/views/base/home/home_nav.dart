@@ -41,7 +41,9 @@ class _HomeNavState extends State<HomeNav> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: pages[currentIndex],
+      body: SafeArea(
+        child: pages[currentIndex],
+      ),
       bottomNavigationBar: BottomNavigationBar(
         items: List.generate(
           pages.length,

@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-
+import 'package:mega_store/core/logic/helper_methods.dart';
+import 'package:mega_store/views/auth/login.dart';
+import 'package:mega_store/views/base/account/account_directions/address.dart';
+import 'package:mega_store/views/base/account/account_directions/delete_account.dart';
+import 'package:mega_store/views/base/account/account_directions/my_orders.dart';
+import 'package:mega_store/views/base/account/account_directions/profile.dart';
 import '../../../core/design/styles.dart';
 
 class AccountView extends StatelessWidget {
@@ -9,22 +13,6 @@ class AccountView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    List<String> title = [
-      "Profile",
-      "My Orders",
-      "Address",
-      "Log out",
-      "Delete Account",
-    ];
-
-    List<String> icons = [
-      "person.svg",
-      "orders.svg",
-      "address.svg",
-      "logout.svg",
-      "delete_account.svg",
-    ];
-
     return Scaffold(
       body: SafeArea(
         child: Column(
@@ -42,36 +30,170 @@ class AccountView extends StatelessWidget {
               ),
             ),
             const Divider(),
-            Expanded(
-              child: ListView.builder(
-                shrinkWrap: true,
-                itemBuilder: (context, index) => Padding(
-                  padding: EdgeInsetsDirectional.only(
-                    start: 16.w,
-                    top: 16.h,
-                    bottom: 20.h,
-                  ),
-                  child: Row(
-                    children: [
-                      SvgPicture.asset(
-                        "assets/icons/${icons[index]}",
-                        width: 30.w,
-                        height: 30.h,
-                      ),
-                      SizedBox(
-                        width: 16.w,
-                      ),
-                      Text(
-                        title[index],
-                        style: Styles.textStyle12W400.copyWith(
-                          fontWeight: FontWeight.w700,
-                          color: const Color(0xff223263)
-                        ),
-                      ),
-                    ],
-                  ),
+            InkWell(
+              onTap: () {
+                navigateTo(
+                  const ProfileView(),
+                );
+              },
+              child: Padding(
+                padding: EdgeInsetsDirectional.only(
+                  start: 16.w,
+                  top: 16.h,
+                  bottom: 20.h,
                 ),
-                itemCount: title.length,
+                child: Row(
+                  children: [
+                    Image.asset(
+                      "assets/icons/person.png",
+                      width: 30.w,
+                      height: 30.h,
+                    ),
+                    SizedBox(
+                      width: 16.w,
+                    ),
+                    Text(
+                      "Profile",
+                      style: Styles.textStyle12W400.copyWith(
+                        fontWeight: FontWeight.w700,
+                        color: const Color(0xff223263),
+                        height: 1.8,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            InkWell(
+              onTap: ()
+              {
+                navigateTo(const MyOrdersView(),);
+              },
+              child: Padding(
+                padding: EdgeInsetsDirectional.only(
+                  start: 16.w,
+                  top: 16.h,
+                  bottom: 20.h,
+                ),
+                child: Row(
+                  children: [
+                    Image.asset(
+                      "assets/icons/orders.png",
+                      width: 30.w,
+                      height: 30.h,
+                    ),
+                    SizedBox(
+                      width: 16.w,
+                    ),
+                    Text(
+                      "My Orders",
+                      style: Styles.textStyle12W400.copyWith(
+                        fontWeight: FontWeight.w700,
+                        color: const Color(0xff223263),
+                        height: 1.8,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            InkWell(
+              onTap: ()
+              {
+                navigateTo(const AddressView(),);
+              },
+              child: Padding(
+                padding: EdgeInsetsDirectional.only(
+                  start: 16.w,
+                  top: 16.h,
+                  bottom: 20.h,
+                ),
+                child: Row(
+                  children: [
+                    Image.asset(
+                      "assets/icons/address.png",
+                      width: 30.w,
+                      height: 30.h,
+                    ),
+                    SizedBox(
+                      width: 16.w,
+                    ),
+                    Text(
+                      "Address",
+                      style: Styles.textStyle12W400.copyWith(
+                        fontWeight: FontWeight.w700,
+                        color: const Color(0xff223263),
+                        height: 1.8,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            InkWell(
+              onTap: ()
+              {
+                navigateTo(const LoginView(),);
+              },
+              child: Padding(
+                padding: EdgeInsetsDirectional.only(
+                  start: 16.w,
+                  top: 16.h,
+                  bottom: 20.h,
+                ),
+                child: Row(
+                  children: [
+                    Image.asset(
+                      "assets/icons/logout.png",
+                      width: 30.w,
+                      height: 30.h,
+                    ),
+                    SizedBox(
+                      width: 16.w,
+                    ),
+                    Text(
+                      "Log out",
+                      style: Styles.textStyle12W400.copyWith(
+                        fontWeight: FontWeight.w700,
+                        color: const Color(0xff223263),
+                        height: 1.8,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            InkWell(
+              onTap: ()
+              {
+                navigateTo(const DeleteAccountView(),);
+              },
+              child: Padding(
+                padding: EdgeInsetsDirectional.only(
+                  start: 16.w,
+                  top: 16.h,
+                  bottom: 20.h,
+                ),
+                child: Row(
+                  children: [
+                    Image.asset(
+                      "assets/icons/delate_account.png",
+                      width: 30.w,
+                      height: 30.h,
+                    ),
+                    SizedBox(
+                      width: 16.w,
+                    ),
+                    Text(
+                      "Delete Account",
+                      style: Styles.textStyle12W400.copyWith(
+                        fontWeight: FontWeight.w700,
+                        color: const Color(0xff223263),
+                        height: 1.8,
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
           ],
