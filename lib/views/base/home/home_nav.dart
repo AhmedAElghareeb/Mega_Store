@@ -4,7 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:mega_store/core/design/styles.dart';
 import 'package:mega_store/views/base/account/view.dart';
 import 'package:mega_store/views/base/favorites/view.dart';
-import 'package:mega_store/views/base/home/view.dart';
+import 'package:mega_store/views/base/home/home_view/view.dart';
 import 'package:mega_store/views/base/offers/view.dart';
 
 class HomeNav extends StatefulWidget {
