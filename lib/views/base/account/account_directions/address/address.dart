@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mega_store/core/design/app_button.dart';
 import 'package:mega_store/core/design/styles.dart';
 import 'package:mega_store/core/logic/helper_methods.dart';
-import 'package:mega_store/views/base/account/account_directions/add_address.dart';
+import 'package:mega_store/views/base/account/account_directions/address/add_address.dart';
 import 'package:mega_store/views/base/home/home_view/cart/widgets/address_item.dart';
 
 class AddressView extends StatelessWidget {

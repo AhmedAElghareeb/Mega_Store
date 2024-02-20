@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mega_store/core/design/app_button.dart';
 import 'package:mega_store/core/design/styles.dart';
-import 'package:mega_store/views/base/account/account_directions/widgets/address_fields.dart';
+import 'package:mega_store/views/base/account/account_directions/components/address_fields.dart';
 
 class AddAddressView extends StatelessWidget {
   const AddAddressView({super.key});

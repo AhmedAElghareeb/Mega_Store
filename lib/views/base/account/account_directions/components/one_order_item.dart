@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mega_store/core/design/styles.dart';
 import 'package:mega_store/core/logic/helper_methods.dart';
-import 'package:mega_store/views/base/account/account_directions/orders_details.dart';
+import 'package:mega_store/views/base/account/account_directions/my_orders/orders_details.dart';
 
 class OneOrderItem extends StatelessWidget {
   const OneOrderItem({super.key});

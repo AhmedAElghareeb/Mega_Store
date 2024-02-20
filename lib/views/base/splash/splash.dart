@@ -14,14 +14,17 @@ class _SplashViewState extends State<SplashView> {
   @override
   void initState() {
     super.initState();
+    init();
+  }
+
+  void init() {
     Timer(
       const Duration(
         seconds: 2,
       ),
-      () async {
+          () async {
         navigateTo(
           const LoginView(),
-          removeHistory: true,
         );
       },
     );

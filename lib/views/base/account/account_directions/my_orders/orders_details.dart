@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mega_store/core/design/styles.dart';
-import 'package:mega_store/views/base/account/account_directions/widgets/payment_details_item.dart';
-import 'package:mega_store/views/base/account/account_directions/widgets/product_item_details.dart';
-import 'package:mega_store/views/base/account/account_directions/widgets/shipping_details_item.dart';
+import 'package:mega_store/views/base/account/account_directions/components/payment_details_item.dart';
+import 'package:mega_store/views/base/account/account_directions/components/product_item_details.dart';
+import 'package:mega_store/views/base/account/account_directions/components/shipping_details_item.dart';
 
 class OrdersDetailsView extends StatelessWidget {
   const OrdersDetailsView({super.key});

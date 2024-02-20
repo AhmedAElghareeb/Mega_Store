@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mega_store/core/logic/helper_methods.dart';
 import 'package:mega_store/views/auth/login.dart';
-import 'package:mega_store/views/base/account/account_directions/address.dart';
-import 'package:mega_store/views/base/account/account_directions/delete_account.dart';
-import 'package:mega_store/views/base/account/account_directions/my_orders.dart';
-import 'package:mega_store/views/base/account/account_directions/profile.dart';
+import 'package:mega_store/views/base/account/account_directions/address/address.dart';
+import 'package:mega_store/views/base/account/account_directions/delete_account/delete_account.dart';
+import 'package:mega_store/views/base/account/account_directions/my_orders/my_orders.dart';
+import 'package:mega_store/views/base/account/account_directions/profile/profile.dart';
 import '../../../core/design/styles.dart';
 
 class AccountView extends StatelessWidget {
